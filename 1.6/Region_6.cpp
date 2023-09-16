@@ -9,17 +9,17 @@ bool InCircle(const double& x, const double& y, const double& R)
 
 bool check1(const double& x, const double& y, const double& a, const double& R)
 {
-    return (y <= a && InCircle(x,y,R) == false);
+    return (x >= -a && InCircle(x,y,R));
 }
 
 bool check2(const double& x, const double& y, const double& a, const double& R)
 {
-    return (x <= a && y >= -a && InCircle(x,y,R));
+    return (abs(x) <= a && InCircle(x,y,R) == false);
 }
 
 bool check3(const double& x, const double& y, const double& R)
 {
-    return InCircle(x,y,R) && ((x >= 0 && y <= 0) || (x <= 0 && y >= 0 && y >= -x));
+    return InCircle(x,y,R) && ((x >= 0 && y >= 0) || (x <= 0 && y <= 0 && y <= x));
 }
 
 
