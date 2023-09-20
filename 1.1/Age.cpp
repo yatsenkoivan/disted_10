@@ -1,30 +1,29 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
     int N;
-    cin >> N;
-    
-    int _2last = N%100;
-    
-    if (_2last >= 11 && _2last <= 14)
+    cin>>N;
+    if (N%100 >= 11 && N%100 <= 19)
     {
-        cout << "rokiv\n";
-        return 0;
+        cout << "rokiv" << endl;
     }
-    switch(N%10)
+    else
     {
-        case 1:
-            cout << "rik\n";
-            break;
-        case 2:
-        case 3:
-        case 4:
-            cout << "roky\n";
-            break;
-        default:
-            cout << "rokiv\n";
-            break;
+        switch(N%10)
+        {
+            case 1:
+                cout<<"rik\n";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                cout<<"roky"<<endl;
+                break;
+            default:
+                cout<<"rokiv"<<endl;
+                break;
+        }
     }
 }
