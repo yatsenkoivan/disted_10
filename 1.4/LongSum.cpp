@@ -1,12 +1,23 @@
 #include <iostream>
 using namespace std;
 
+// 1 - a>b
+// 0 - a=b
+//-1 - a<b
+int compare(const string& a, const string& b)
+{
+   if (a.length() > b.length()) return 1;
+   if (a.length() < b.length()) return -1;
+   
+   if (a > b) return 1;
+   if (a < b) return -1;
+   return 0;
+}
+
 string subtract(const string& a, const string& b)
 {
-    string A;
-    string B;
-    
-    if (a > b)
+    string A, B;
+    if (compare(a,b) >= 0)
     {
         A = a;
         B = b;
@@ -69,8 +80,9 @@ string add(const string& a, const string& b)
     if (negative1 != negative2)
     {
         res = subtract(A,B);
-        if (A > B && negative1) res = '-'+res;
-        if (B > A && negative2) res = '-'+res;
+        int temp = compare(A,B);
+        if (temp == 1 && negative1) res = '-'+res;
+        if (temp == -1 && negative2) res = '-'+res;
         return res;
     }
     
