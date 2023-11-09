@@ -8,7 +8,7 @@ int main()
 	int n;
 	cin >> n;
 	
-	vector<bool> arr(n, 1);
+	vector<bool> arr(n+1, 1);
 	
 	arr[0] = 0;
 	arr[1] = 0;
