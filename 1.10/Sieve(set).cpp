@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <set>
 #include <cmath>
 using namespace std;
 
@@ -8,26 +8,26 @@ int main()
 	int n;
 	cin >> n;
 	
-	vector<bool> arr(n+1, 1);
+	set<int> arr;
 	
-	arr[0] = 0;
-	arr[1] = 0;
+	for (int i=2; i<=n; i++) arr.insert(i);
 	
 	int end = sqrt(n);
 	
 	for (int i=2; i<=end; i++)
 	{
-		if (arr[i] == 0) continue;
+		if (arr.find(i) == arr.end()) continue;
 		
 		for (int j=i*2; j<=n; j+=i)
 		{
-			arr[j] = 0;
+			arr.erase(j);
 		}
 	}
 	
-	for (int i=0; i<=n; i++)
+	for (int i : arr)
 	{
-		if (arr[i]) cout << i << ' ';
+		cout << i << ' ';
 	}
 	cout << endl;
+	
 }
