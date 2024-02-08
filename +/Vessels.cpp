@@ -98,8 +98,7 @@ int main()
                 S.push_front(newNode);
             }
             
-            list<Node*>::iterator j = i;
-            j++;
+            list<Node*>::iterator j = next(i);
             S.erase(i);
             i = j;
         }
