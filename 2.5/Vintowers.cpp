@@ -36,14 +36,14 @@ void VinTowers(const string& s)
         if (color == 'w')
         {
             Hanoi(white_total, white, base, work);
-            white_amount += temp;
+            white_total += temp;
             Hanoi(white_total, base, white, work);
         }
         else if (color == 'b')
         {
-            Hanoi(black_amount, black, base, work);
-            black_amount += temp_amount;
-            Hanoi(black_amount, base, black, work);
+            Hanoi(black_total, black, base, work);
+            black_total += temp;
+            Hanoi(black_total, base, black, work);
         }
         
     }

@@ -6,13 +6,13 @@ void set_neighbors(vector<vector<bool>>& arr, int i, int j)
 {
     arr[i][j] = 0;
     
-    if (i < arr.size()-1 && arr[i+1][j]) set_neighbors(arr, i+1, j);
+    if (i+1 < arr.size() && arr[i+1][j]) set_neighbors(arr, i+1, j);
     
-    if (i > 0 && arr[i-1][j]) set_neighbors(arr, i-1, j);
+    if (i-1 >= 0 && arr[i-1][j]) set_neighbors(arr, i-1, j);
     
-    if (j < arr[i].size()-1 && arr[i][j+1]) set_neighbors(arr, i, j+1);
+    if (j+1 < arr[i].size() && arr[i][j+1]) set_neighbors(arr, i, j+1);
 
-    if (j > 0 && arr[i][j-1]) set_neighbors(arr, i, j-1);
+    if (j-1 >= 0 && arr[i][j-1]) set_neighbors(arr, i, j-1);
 }
 
 int func(vector<vector<bool>>& arr)
