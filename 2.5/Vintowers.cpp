@@ -28,7 +28,7 @@ void VinTowers(const string& s)
     {
         color = s[i];
         temp = 0;
-        for (; s[i] == color; i++)
+        for (; i<s.length() && s[i] == color; i++)
         {
             temp++;
         }
