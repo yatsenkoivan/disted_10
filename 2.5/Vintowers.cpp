@@ -18,26 +18,26 @@ void VinTowers(const string& s)
     const int black=4;
     
     char color;
-    int temp_amount;
-    int white_amount = 0;
-    int black_amount = 0;
-    int total_amount = s.length();
+    int temp;
+    int white_total = 0;
+    int black_total = 0;
+    int total = s.length();
     
     int i = 0;
-    while (white_amount + black_amount < total_amount)
+    while (white_total + black_total < total)
     {
         color = s[i];
-        temp_amount = 0;
-        for (; s[i]==color; i++)
+        temp = 0;
+        for (; s[i] == color; i++)
         {
-            temp_amount++;
+            temp++;
         }
         
         if (color == 'w')
         {
-            Hanoi(white_amount, white, base, work);
-            white_amount += temp_amount;
-            Hanoi(white_amount, base, white, work);
+            Hanoi(white_total, white, base, work);
+            white_amount += temp;
+            Hanoi(white_total, base, white, work);
         }
         else if (color == 'b')
         {
